@@ -26,13 +26,13 @@ def Download(filepattern, urlpattern, day):
             print("*** error downloading ***")
             return None
         puzzle = res.text.strip()
-        with open(filepath, "w") as f:
+        with open(filepath, "w", encoding="utf-8") as f:
             f.write(puzzle)
         return puzzle.split("\n")
     else:
         print(url)
 
-    with open(filepath) as f:
+    with open(filepath, encoding="utf-8") as f:
         return f.read().split("\n")
 
 
